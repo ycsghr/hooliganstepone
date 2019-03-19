@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="yc.com.hooliganstepone">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+            <!--excludeFromRecents=true是设置页面不可见--><!--taskAffinity设置启动到的进程-->
+        <activity android:name=".PixelActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity="yc.com.hooliganstepone"
+            android:theme="@style/pixelTheme"/>
+        <service android:name=".service.MyService"/>
+        <service android:name=".service.MyService$InteriorService"/>
+        <service android:name=".service.BrightService"/>
+        <!--设置新的进程-->
+        <service android:name=".service.RemoteService"
+          android:process=":Remote"/>
+    </application>
+
+</manifest>
